@@ -10,4 +10,10 @@ class GitSecrets < Formula
   def install
     system "make", "install", "PREFIX=#{prefix}"
   end
+
+  test do
+    system "git", "init"
+    system "git", "secrets", "--install"
+  end
+
 end
